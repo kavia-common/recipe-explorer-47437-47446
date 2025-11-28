@@ -1,0 +1,4 @@
+{
+    "command": "npm run dev -- --force --port <port> --bind <host>",
+    "working_directory": "/home/kavia/workspace/code-generation/recipe-explorer-47437-47446/slidev_frontend"
+}
