@@ -1,2 +1,3 @@
 /* style.css */
+/* Intermediate stylesheet: Slidev frontmatter imports this file, which imports the theme. */
 @import "./theme/custom.css";

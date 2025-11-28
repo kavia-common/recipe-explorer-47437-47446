@@ -1,79 +1,88 @@
 :root {
-  /* Core dark palette — neutral blue/purple accent */
-  --theme-bg-canvas: #1A1B1F;       /* dark charcoal canvas */
-  --theme-bg-elevated: #21222A;     /* cards/surfaces */
-  --theme-bg-elev-1: #21222A;
-  --theme-bg-elev-2: #282931;
-  --theme-bg-elev-3: #2F3039;
-  --theme-bg-sidebar: #161719;
+  /* Ocean Professional (light by spec) with support for existing dark defaults */
+  /* Core light palette per style guide */
+  --ocean-primary: #2563EB;   /* blue */
+  --ocean-secondary: #F59E0B; /* amber/success */
+  --ocean-error: #EF4444;
+  --ocean-bg: #f9fafb;        /* background */
+  --ocean-surface: #ffffff;   /* surface */
+  --ocean-text: #111827;      /* text */
 
-  --theme-text-primary: #F4F4F5;
-  --theme-text-secondary: #C9C9CF;
-  --theme-text-muted: #9C9CA3;
-  --theme-icon-muted: #8B8B92;
+  /* Map to theme tokens (prefer light) */
+  --theme-bg-canvas: var(--ocean-bg);
+  --theme-bg-elevated: var(--ocean-surface);
+  --theme-bg-elev-1: var(--ocean-surface);
+  --theme-bg-elev-2: #F3F4F6;
+  --theme-bg-elev-3: #E5E7EB;
+  --theme-bg-sidebar: #F8FAFC;
 
-  --theme-border-subtle: #34353A;
-  --theme-border-strong: #43444A;
+  --theme-text-primary: var(--ocean-text);
+  --theme-text-secondary: #4B5563;
+  --theme-text-muted: #6B7280;
+  --theme-icon-muted: #9CA3AF;
 
-  /* Primary brand – Blue/Purple */
-  --theme-primary-600: #5B6FDB;
-  --theme-primary-500: #6B7FEB;
-  --theme-primary-400: #8B9FFB;
-  --theme-primary-300: #A8B7FF;
-  --theme-primary-200: #C8D1FF;
-  --theme-primary-50:  #EEF0FF;
+  --theme-border-subtle: #E5E7EB;
+  --theme-border-strong: #D1D5DB;
 
-  /* Accent aliases for backwards compatibility */
+  /* Primary brand */
+  --theme-primary-600: #1D4ED8;
+  --theme-primary-500: var(--ocean-primary);
+  --theme-primary-400: #60A5FA;
+  --theme-primary-300: #93C5FD;
+  --theme-primary-200: #BFDBFE;
+  --theme-primary-50:  #EFF6FF;
+
+  /* Accent aliases */
   --theme-accent: var(--theme-primary-500);
   --theme-accent-strong: var(--theme-primary-600);
 
   /* Semantic */
-  --theme-success: #40D79E;
-  --theme-warning: #FFC75A;
-  --theme-danger:  #FF6B6B;
-  --theme-info:    #6EB9FF;
+  --theme-success: var(--ocean-secondary);
+  --theme-warning: var(--ocean-secondary);
+  --theme-danger:  var(--ocean-error);
+  --theme-info:    #0EA5E9;
 
   /* Controls */
-  --theme-btn-primary-fg: #1A1B1F;
+  --theme-btn-primary-fg: #ffffff;
   --theme-btn-primary-bg: var(--theme-primary-500);
   --theme-btn-primary-hover: var(--theme-primary-600);
-  --theme-btn-primary-press: #4B5FCB;
+  --theme-btn-primary-press: #1E40AF;
   --theme-btn-ghost-fg: var(--theme-text-secondary);
-  --theme-btn-ghost-hover-bg: var(--theme-bg-elev-2);
-  --theme-chip-bg: var(--theme-bg-elev-2);
+  --theme-btn-ghost-hover-bg: #F3F4F6;
+  --theme-chip-bg: #F9FAFB;
   --theme-chip-fg: var(--theme-text-secondary);
-  --theme-chip-active-bg: var(--theme-bg-elev-3);
+  --theme-chip-active-bg: #EEF2FF;
   --theme-chip-active-fg: var(--theme-text-primary);
 
   /* Focus and overlays */
   --theme-focus-ring: var(--theme-primary-400);
-  --theme-overlay-ambient: linear-gradient(180deg, rgba(107,127,235,0.18) 0%, rgba(0,0,0,0) 55%);
+  --theme-overlay-ambient: linear-gradient(180deg, rgba(37,99,235,0.08) 0%, rgba(0,0,0,0) 55%);
 
-  /* Lines (generic fallbacks still supported) */
+  /* Lines */
   --line-subtle: var(--theme-border-subtle);
   --line: var(--theme-border-subtle);
   --line-strong: var(--theme-border-strong);
 
-  /* Deprecated/legacy tokens retained as fallbacks to new ones */
+  /* Deprecated/legacy tokens retained */
   --bg-canvas: var(--theme-bg-canvas);
   --bg-elevated: var(--theme-bg-elevated);
   --bg-muted: var(--theme-bg-elev-2);
 
   --text-primary: var(--theme-text-primary);
   --text-secondary: var(--theme-text-secondary);
-  --text-inverted: #0D0F14;
-  --text-link: var(--theme-primary-300);
+  --text-inverted: #ffffff;
+  --text-link: var(--theme-primary-600);
 
-  /* Accent family retained for charts and cool highlights if needed */
+  /* Accent family */
   --accent-primary: var(--theme-primary-500);
   --accent-primary-600: var(--theme-primary-600);
   --accent-primary-400: var(--theme-primary-400);
-  --accent-secondary: #17D1D4;
-  --accent-warm: #FF5C8A;
+  --accent-secondary: var(--ocean-secondary);
+  --accent-warm: #FB7185;
 
-  /* Gradients: primary brand */
+  /* Gradients */
   --grad-primary: linear-gradient(135deg, var(--theme-primary-600) 0%, var(--theme-primary-400) 50%, var(--theme-primary-300) 100%);
-  --grad-hero: radial-gradient(1200px 600px at 60% -10%, rgba(107,127,235,0.22) 0%, rgba(139,159,251,0.15) 35%, rgba(26,27,31,0) 70%);
+  --grad-hero: radial-gradient(1200px 600px at 60% -10%, rgba(37,99,235,0.10) 0%, rgba(243,244,246,0.6) 45%, rgba(249,250,251,0) 80%);
 }
 
 /* Base */
@@ -81,6 +90,8 @@
   background: var(--theme-bg-canvas) !important;
   color: var(--theme-text-primary);
   font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+  background-image: linear-gradient(to bottom right, rgba(59,130,246,0.08), rgba(249,250,251,0.6));
+  background-attachment: fixed;
 }
 
 /* Ensure slide canvas supports vertical scroll when content overflows */
@@ -210,6 +221,14 @@ a:hover {
   text-align: center;
   position: relative;
   background: var(--theme-bg-canvas);
+}
+
+/* Landing section for recipe list */
+.landing .hero {
+  text-align: center;
+}
+.landing .subtitle {
+  color: var(--theme-text-secondary);
 }
 
 .title-slide .logo {
